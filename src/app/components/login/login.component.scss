@@ -9,7 +9,7 @@
     background-repeat: no-repeat;
     .container-text {
       height: 100vh;
-      background-color: #254fc1bf;
+      background-color: #153899bf;
       .container-title {
         padding: 38% 0% 0% 12%;
         h1,
@@ -81,9 +81,73 @@
         padding: 2%;
         cursor: pointer;
         p {
+          color: #000;
         }
         &:hover {
           color: #ddd;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-main {
+    flex-direction: column;
+    position: relative;
+    .container-image {
+      background-position: initial;
+      width: 100%;
+      .container-text{
+        background-color: #0e2b7abf;
+      }
+      .container-title {
+        display: none;
+      }
+    }
+    .container-login {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 1rem;
+      border: 1px solid #000;
+      height: 52vh;
+      width: 96%;
+      margin: 50% 5% 0% 2%;
+      .container-image-login {
+        margin-top: 14%;
+      }
+      .container-user {
+        padding: 0%;
+        mat-form-field {
+          width: 100%;
+          input {
+            height: 40px;
+          }
+        }
+        button {
+          background: transparent;
+          border: none;
+          cursor: pointer;
+        }
+      }
+      .container-button {
+        button {
+          width: 100%;
+          padding: 2%;
+          border-radius: 10px;
+          color: #fff;
+          background-color: #3737ec;
+          cursor: pointer;
+        }
+      }
+      .container-missing-user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .missing-user,
+        .missing-pass {
+          font-size: 12px;
+          cursor: pointer;
         }
       }
     }
