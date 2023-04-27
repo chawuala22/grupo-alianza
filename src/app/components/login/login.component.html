@@ -1,0 +1,46 @@
+<div class="container-main">
+  <div class="container-image">
+    <div class="container-text">
+      <div class="container-title">
+        <h1>Bienvenido a la mejor plataforma</h1>
+        <h1><strong>organizacional online</strong></h1>
+        <h3>Gestión efectiva del talento humano</h3>
+      </div>
+    </div>
+  </div>
+  <div class="container-login">
+    <div class="container-image-login">
+      <img
+        src="https://app.psicoalianza.com/images/login/psico.png"
+        alt=""
+        width="60%"
+      />
+    </div>
+    <div class="container-text-login">
+      <div class="container-user">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Usuario</mat-label>
+          <input matInput placeholder="ingrese su usuario" />
+        </mat-form-field>
+      </div>
+      <div class="container-user">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="Contraseña">
+          <button mat-icon-button matSuffix (click)="hide = !hide">
+            <mat-icon >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="container-remember">
+        <mat-checkbox>Recordar cuenta</mat-checkbox>
+      </div>
+      <div class="container-button">
+        <button>Iniciar Sesion</button>
+      </div>
+      <div class="container-missing-user">
+        <p  class="missing-user" >¿Olvidaste tu usuario?</p>
+        <p class="missing-pass">¿Olvidaste tu contraseña?</p>
+      </div>
+    </div>
+  </div>
+</div>
