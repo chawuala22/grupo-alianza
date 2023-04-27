@@ -20,12 +20,13 @@
       <div class="container-user">
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Usuario</mat-label>
-          <input matInput placeholder="ingrese su usuario" />
+          <input matInput placeholder="Ingrese su usuario" />
         </mat-form-field>
       </div>
       <div class="container-user">
         <mat-form-field class="example-full-width" appearance="outline">
-          <input matInput [type]="hide ? 'password' : 'text'" placeholder="Contraseña">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="Ingrese su contraseña">
           <button mat-icon-button matSuffix (click)="hide = !hide">
             <mat-icon >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
