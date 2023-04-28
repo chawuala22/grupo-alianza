@@ -18,6 +18,11 @@
     </div>
   </div>
 </div>
+  <div class="container-button">
+    <button type="button"> <img src="../../../assets/img/arrow-left-solid.svg" height ="90" width="480" /></button>
+    <button *ngIf="page != 1" (click)="loadData(page = page - 1)" ><i class="fas fa-arrow-right"></i></button>
+    <button (click)="loadData(page = page + 1)" >Siguiente página</button>
+  </div>
 <div>
 </div>
 <app-footer></app-footer>

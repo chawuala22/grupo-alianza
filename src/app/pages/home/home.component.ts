@@ -11,18 +11,19 @@ export class HomeComponent implements OnInit {
   inputSearch: string = '';
   search: boolean = false;
   listDisney: any;
-  paginatorDisney: any;
+  page:number = 1;
+  pageSize:number = 50;
   constructor(private disneyService: DisneyAPIService) {}
   ngOnInit(): void {
-    this.getAllCharacter();
-
+    this.loadData(this.page);
+    this.page += 1;
   }
-
-  getAllCharacter() {
-    this.disneyService.getAllCharacters().subscribe((res: DisneyModel) => {
-      this.listDisney = res;
-    },
-    err => alert('API FALLANDO'));
+  loadData(page:number) {
+    this.disneyService.getAllCharacters(page, this.pageSize).subscribe((data: DisneyModel) => {
+      this.listDisney = data
+      this.listDisney = this.listDisney.concat(data);
+    })
+    window.scroll(0,0);
   }
 
   filterCharacters(name: string): void {
