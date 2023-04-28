@@ -1,12 +1,78 @@
 <div class="container-main">
- <div class="card">
+  <div *ngIf="detailDisney" class="card">
     <div class="container-img">
-        <img src="{{ detailDisney.data.imageUrl }}" alt="" />
-      </div>
-      <div class="container-text">
-        <p>{{ detailDisney.data.name }}</p>
-      </div>
- </div>
-</div>
+      <img src="{{ detailDisney.data.imageUrl }}" alt="" />
+    </div>
+    <div class="container-text">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Detailed information</th>
+          <th>Creation date</th>
+          <th>Uodate date</th>
+        </tr>
+        <tr>
+          <td>{{ detailDisney.data.name }}</td>
+          <td>
+            <a href="{{ detailDisney.data.sourceUrl }}">
+              For more information click here
+            </a>
+          </td>
+          <td>{{ detailDisney.data.createdAt | date }}</td>
+          <td>{{ detailDisney.data.updatedAt | date }}</td>
+        </tr>
+      </table>
+      <div class="container-info">
+        <h1>Additional Information</h1>
 
-<button (click)="onGoBack()">Atras</button>
+        <div *ngIf="detailDisney.data.films.length !== 0" class="container-aditional">
+          <h1>Films</h1>
+          <p *ngFor="let films of detailDisney.data.films">{{ films }}</p>
+        </div>
+
+        <div *ngIf="detailDisney.data.shortFilms.length !== 0" class="container-aditional">
+          <h1>Short films</h1>
+          <p *ngFor="let shortFilms of detailDisney.data.shortFilms">{{shortFilms}}</p>
+        </div>
+        <div
+          *ngIf="detailDisney.data.tvShows.length !== 0"
+          class="container-aditional"
+        >
+          <h1>TV shows</h1>
+          <p *ngFor="let tvShows of detailDisney.data.tvShows">{{tvShows}}</p>
+        </div>
+        <div
+          *ngIf="detailDisney.data.videoGames.length != 0"
+          class="container-aditional"
+        >
+          <h1>Video games</h1>
+          <p *ngFor="let videoGames of detailDisney.data.videoGames">{{videoGames}}</p>
+        </div>
+        <div
+          *ngIf="detailDisney.data.parkAttractions.length != 0"
+          class="container-aditional"
+        >
+          <h1>Park attractions</h1>
+          <p *ngFor="let parkAttractions of detailDisney.data.parkAttractions">{{parkAttractions}}</p>
+        </div>
+        <div
+          *ngIf="detailDisney.data.allies.length != 0"
+          class="container-aditional"
+        >
+          <h1>Allies</h1>
+          <p *ngFor="let allies of detailDisney.data.allies">{{allies}}</p>
+        </div>
+        <div
+          *ngIf="detailDisney.data.enemies.length != 0"
+          class="container-aditional"
+        >
+          <h1>Enemies</h1>
+          <p *ngFor="let enemies of detailDisney.data.enemies">{{enemies}}</p>
+        </div>
+        <div class="container-button">
+          <button (click)="onGoBack()">Atras</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

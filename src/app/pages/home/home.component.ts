@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DisneyModel } from 'src/app/models/disney-model';
 import { DisneyAPIService } from 'src/app/services/disney-api.service';
 
@@ -7,11 +7,14 @@ import { DisneyAPIService } from 'src/app/services/disney-api.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   listDisney: any;
   paginatorDisney:any
   constructor(private disneyService: DisneyAPIService){
+    
+  }
+  ngOnInit(): void {
     this.getAllCharacter();
   }
 

@@ -2,7 +2,7 @@
 <app-search></app-search>
 
 <div class="container-main">
-  <div class="container-content">
+  <div *ngIf="listDisney" class="container-content">
     <div *ngFor="let disney of listDisney.data" [routerLink]="['../detail', disney._id]" class="container-card">
       <div class="container-img">
         <img

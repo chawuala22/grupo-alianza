@@ -18,6 +18,62 @@
     }
     .container-text {
       width: 60%;
+      table {
+        width: 94%;
+        border-radius: 1rem;
+        margin: 3% 3%;
+      }
+
+      th,
+      td {
+        text-align: center;
+        vertical-align: middle;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 1rem;
+      }
+
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #ddd;
+      }
+
+      .container-info {
+        padding: 4%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .container-button {
+        display: flex;
+        justify-content: center;
+        button {
+          width: 9vw;
+          height: 4vh;
+          border-radius: 10px;
+          color: #fff;
+          background-color: #3737ec;
+          cursor: pointer;
+        }
+        button:hover {
+          color: #3737ec;
+          background-color: #fff;
+        }
+      }
+      .container-aditional {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 }

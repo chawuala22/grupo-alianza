@@ -14,21 +14,22 @@ import { DisneyAPIService } from 'src/app/services/disney-api.service';
 })
 export class DetailComponent {
   detailDisney:any
-  ruta: string | undefined;
+  ruta: string | undefined; 
   constructor(private disneyDetail:DisneyAPIService, private location:Location,  private router: Router) { 
     this.ruta = this.router.url.split('/').pop();   
   }
 
   ngOnInit(): void {
+    this.getOneCharacter();
+  }
 
+
+  getOneCharacter(){
     this.disneyDetail.getOneCharacter(this.ruta).subscribe((res)=>{
       this.detailDisney = res;
       console.log(this.detailDisney);
-      
-    })
-
+    });
   }
-
   onGoBack():void{
     this.location.back();
   }
