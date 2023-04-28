@@ -4,7 +4,6 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { LoginComponent } from '../components/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
-import { SearchComponent } from '../shared/search/search.component';
 import { HeaderComponent } from '../shared/header/header.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 
@@ -14,10 +13,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
+import {  FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [LoginComponent, HomeComponent, DetailComponent, SearchComponent, HeaderComponent, FooterComponent],
+  declarations: [LoginComponent, HomeComponent, DetailComponent, HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,
@@ -25,7 +25,8 @@ import {MatTableModule} from '@angular/material/table';
     MatCheckboxModule,
     MatIconModule,
     MatToolbarModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule 
   ]
 })
 export class PagesModule { }

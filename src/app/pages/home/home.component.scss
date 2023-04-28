@@ -1,10 +1,37 @@
+.container-search {
+  display: flex;
+  gap: 2%;
+  justify-content: flex-end;
+  padding-top: 2%;
+  padding-right: 6%;
+  align-items: center;
+  input {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  input:focus {
+    border-color: #007bff;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  }
+}
 .container-main {
   .container-content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    padding: 4%;
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      padding: 4%;
+    }
     .container-card {
+      @media screen and (max-width: 764px) {
+        width: 96vw;
+        margin: 5% 2% 2% 2%;
+      }
       background-color: #ddd;
       border: 1px solid #000;
       width: 20vw;

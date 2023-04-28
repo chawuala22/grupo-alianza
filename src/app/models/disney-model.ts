@@ -1,7 +1,7 @@
 export interface DisneyModel {
     
     url: string;
-    name: string;
+    name: any;
     sourceUrl: string;
     imageUrl: string;
     films: [];

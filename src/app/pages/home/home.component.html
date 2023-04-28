@@ -1,9 +1,11 @@
 <app-header></app-header>
-<app-search></app-search>
-
+<div class="container-search">
+  <label>Search</label>
+  <input placeholder="Search by name" [(ngModel)]="inputSearch" (ngModelChange)="mostrar()" />
+</div>
 <div class="container-main">
   <div *ngIf="listDisney" class="container-content">
-    <div *ngFor="let disney of listDisney.data" [routerLink]="['../detail', disney._id]" class="container-card">
+    <div *ngFor="let disney of search == false ? listDisney.data : listDisney " [routerLink]="['../detail', disney._id]" class="container-card">
       <div class="container-img">
         <img
           src="{{disney.imageUrl}}"
