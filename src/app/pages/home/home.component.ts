@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
   getAllCharacter() {
     this.disneyService.getAllCharacters().subscribe((res: DisneyModel) => {
       this.listDisney = res;
-    });
+    },
+    err => alert('API FALLANDO'));
   }
 
   filterCharacters(name: string): void {
