@@ -1,1 +1,12 @@
-<p>detail works!</p>
+<div class="container-main">
+ <div class="card">
+    <div class="container-img">
+        <img src="{{ detailDisney.data.imageUrl }}" alt="" />
+      </div>
+      <div class="container-text">
+        <p>{{ detailDisney.data.name }}</p>
+      </div>
+ </div>
+</div>
+
+<button (click)="onGoBack()">Atras</button>

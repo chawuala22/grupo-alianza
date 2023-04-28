@@ -1,5 +1,22 @@
 <app-header></app-header>
 <app-search></app-search>
-<p *ngFor="let option of listDisney.data" ><img src="{{option.imageUrl}}" alt=""></p>
 
+<div class="container-main">
+  <div class="container-content">
+    <div *ngFor="let disney of listDisney.data" [routerLink]="['../detail', disney._id]" class="container-card">
+      <div class="container-img">
+        <img
+          src="{{disney.imageUrl}}"
+          alt=""
+        />
+      </div>
+      <div class="container-text">
+        <p>{{disney.name ?? 'No tiene nombre'}}</p>
+        <p>Micky Mouse</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+</div>
 <app-footer></app-footer>

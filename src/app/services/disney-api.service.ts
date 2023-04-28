@@ -11,12 +11,12 @@ export class DisneyAPIService {
   constructor(private httpClient:HttpClient) { }
 
   getAllCharacters(){
-    return this.httpClient.get<DisneyModel[]>(`${this.urlBase}/character`);
+    return this.httpClient.get<DisneyModel>(`${this.urlBase}/character`);
   }
   getOneCharacter(id:any){
-    return this.httpClient.get<DisneyModel[]>(`${this.urlBase}/character/${id}`);
+    return this.httpClient.get<DisneyModel>(`${this.urlBase}/character/${id}`);
   }
   getfilterCharacter( name: any ){
-    return this.httpClient.get<DisneyModel[]>(`${this.urlBase}/character`, { params: { name } })
+    return this.httpClient.get<DisneyModel>(`${this.urlBase}/character`, { params: { name } })
   }
 }
