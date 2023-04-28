@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   search: boolean = false;
   listDisney: any;
   page:number = 1;
-  pageSize:number = 50;
+  pageSize:number = 32;
   constructor(private disneyService: DisneyAPIService) {}
   ngOnInit(): void {
     this.loadData(this.page);

@@ -19,9 +19,8 @@
   </div>
 </div>
   <div class="container-button">
-    <button type="button"> <img src="../../../assets/img/arrow-left-solid.svg" height ="90" width="480" /></button>
-    <button *ngIf="page != 1" (click)="loadData(page = page - 1)" ><i class="fas fa-arrow-right"></i></button>
-    <button (click)="loadData(page = page + 1)" >Siguiente página</button>
+    <button *ngIf="page != 1" (click)="loadData(page = page - 1)" ><img src="../../../assets/img/arrow-left-solid.svg" height ="50" width="50" /></button>
+    <button (click)="loadData(page = page + 1)" ><img src="../../../assets/img/arrow-right-solid.svg" height ="50" width="50" /></button>
   </div>
 <div>
 </div>
